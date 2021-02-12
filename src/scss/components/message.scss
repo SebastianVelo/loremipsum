@@ -1,0 +1,18 @@
+@import "../index.scss";
+
+.--message {
+    border: 1px solid $light-grey;
+    background-color: $background-light;
+    padding: $padding-primary;
+    h1 {
+        color: $primary;
+    }
+    p {
+        font-size: 18px;
+    }
+}
+
+.--not-found {
+    margin: 25% auto;
+    width: 100%;
+}

@@ -1,0 +1,112 @@
+@import "../index.scss";
+
+.--publication {
+    border: 1px solid $light-grey;
+    box-shadow: $shadow;
+    background-color: $background-light;
+    padding: $padding-primary;
+    margin: $margin-primary 0px;
+    transition: left 1s ease;
+    position: relative;
+
+    .--publication-header {
+        padding-bottom: $padding-primary;
+        .--publication-avatar {
+            border: 2px solid $primary;
+            padding: $padding-separation;
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+        }
+
+        .--publication-user {
+            transform: translateY(50%);
+            position: absolute;
+            margin-left: $margin-separation;
+            font-size: 15px;
+        }
+
+        .--publication-options {
+            transform: translateY(-100%);
+            position: absolute;
+            font-size: 30px;
+            right: $padding-primary;
+        }
+    }
+
+    .--publication-like-wrapper {
+        .like {
+            font-size: 25px;
+            &:hover {
+                cursor: pointer;
+                color: $like;
+            }
+            &.active {
+                color: $like;
+            }
+        }
+
+        .save {
+            font-size: 27px;
+            position: absolute;
+            right: $padding-primary;
+            &.active {
+                color: $primary;
+            }
+        }
+    }
+
+    .--publication-comments-wrapper {
+        .--publication-comment-wrapper {
+            font-size: 12px;
+        }
+
+        .--comment-box-wrapper {
+            border: {
+                top: 1px solid $primary;
+                bottom: 1px solid $primary;
+            }
+            .--comment-box {
+                border: none;
+                padding: $padding-primary 0px;
+                &:focus {
+                    outline: none;
+                    box-shadow: none;
+                }
+            }
+            .--comment-box-button {
+                font-size: 25px;
+                transform: translateY(-10%);
+                position: absolute;
+                right: $padding-primary;
+            }
+        }
+    }
+
+    .publication-picture {
+        padding-top: $padding-primary;
+        width: 100%;
+    }
+
+    .--publication-icon {
+        padding-top: $padding-primary;
+    }
+
+    .--publication-user,
+    .--publication-comment-user,
+    .--publication-likes {
+        font-weight: bolder;
+    }
+
+    .--publication-avatar,
+    .--publication-options,
+    .--publication-user,
+    .--publication-likes,
+    .--publication-comment-user,
+    .--publication-icon {
+        &:hover {
+            cursor: pointer;
+            color: $primary !important;
+        }
+    }
+}
