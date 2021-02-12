@@ -6,7 +6,6 @@ class NotFound extends Component {
 
     componentDidMount() {
         Grid.setNotFoundGrid();
-        document.title = "Not Found";
     }
 
     render() {

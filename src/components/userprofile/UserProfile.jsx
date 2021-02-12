@@ -56,7 +56,7 @@ class UserProfile extends Component {
                         </Link>
                     )}
                 </div>
-                {this.state.publications.length === 0 ? <Message title="Oops..." body="No post yet." /> : ""}
+                {this.state.publications.length === 0 ? <Message title="Oops..." body="No posts yet." /> : ""}
             </div>
         );
     }

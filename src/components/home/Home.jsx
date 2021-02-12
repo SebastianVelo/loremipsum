@@ -59,7 +59,7 @@ class Home extends Component {
         <div className="--publications-wrapper">
           {this.state.publications.map(publication => <PublicationCard key={publication.id} publication={publication} userLogged={this.props.userLogged} />)}
         </div>
-        {this.state.publications.length === 0 ? <Message title="Oops..." body="No post yet." /> : ""}
+        {this.state.publications.length === 0 ? <Message title="Oops..." body="No posts yet." /> : ""}
       </div>
     );
   }
