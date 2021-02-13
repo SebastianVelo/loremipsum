@@ -41,4 +41,4 @@ app.get("/api/s/:id", async (req, res) => {
     res.json(stories);
 })
 
-app.listen(process.env.PORT || port, () => console.log("Server started on port " + port));
+app.listen(process.env.PORT || port, () => console.log("Server started on port " + app.get('port')));
