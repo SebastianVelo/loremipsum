@@ -21,7 +21,7 @@ class Home extends Component {
 
   async pagination() {
     window.onscroll = async () => {
-      if ($(window).scrollTop() === $(document).height() - $(window).height()) {
+      if ($(window).scrollTop() + 10 > $(document).height() - $(window).height()) {
         this.setState({ page: this.state.page + 1 });
         await this.getPublications(this.state.page);
       }

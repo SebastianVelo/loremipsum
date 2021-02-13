@@ -1,5 +1,5 @@
 class API {
-    static URL = "http://localhost:5000/api";
+    static URL = "https://lorremipssum.herokuapp.com/api";
     static PATH_USER = (userName) => `${this.URL}/u/${userName}`;
     static PATH_USER_SEARCH = (search) => `${this.URL}/f/u/${search}`;
     static PATH_PUBLICATIONS = (userName) => `${this.URL}/u/p/${userName}`;
