@@ -2,7 +2,7 @@ const express = require('express');
 const cors = require('cors')
 const app = express();
 const request = require('./request/request');
-const port = 5000;
+const port = process.env.PORT || 5000;
 
 app.use(cors());
 
@@ -41,4 +41,4 @@ app.get("/api/s/:id", async (req, res) => {
     res.json(stories);
 })
 
-app.listen(process.env.PORT || port, () => console.log("Server started on port " + process.env.PORT ? process.env.PORT : port));
+app.listen(port, () => console.log("Server started on port " + port));
