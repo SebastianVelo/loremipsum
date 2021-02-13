@@ -7,16 +7,13 @@
     display: inline-block;
     width: 100%;
 
-    .--popover-trigger {
-        z-index: 11;
-    }
     .--popover-content {
         opacity: 0;
         visibility: hidden;
         position: absolute;
         background-color: $background-light;
         border: 1px solid $light-grey;
-        transform: translate(0%, -100px);
+        width: 50%;
     }
     .--popover-content:before {
         position: absolute;
@@ -36,6 +33,6 @@
         transform: translate(0%, -40px);
         margin-top: $margin-secondary;
         width: 100%;
-        transition: transform 0.5s ease-in;
+        transition: width 0.5s ease;
     }
 }
