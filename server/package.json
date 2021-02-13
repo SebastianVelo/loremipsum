@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "server": "nodemon server.js",
+    "server": "sudo nodemon server.js",
     "client": "cd .. && npm start",
     "dev": "concurrently \"npm run server\" \"npm run client\" "
   },
