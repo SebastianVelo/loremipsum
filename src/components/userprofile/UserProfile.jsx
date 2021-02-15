@@ -34,6 +34,8 @@ class UserProfile extends Component {
     }
 
     render() {
+        if (this.state.inProcess)
+            return <Message title="Cargando..." body="" />
         if(!this.state.inProcess && !this.state.user)
             return <Redirect to={Path.NOTFOUND()} />
         return (

@@ -3,6 +3,7 @@ import { Redirect, withRouter } from "react-router";
 
 import API from "../../enums/API.js";
 import Path from "../../enums/Path.js";
+import Message from "../util/message/Message.jsx";
 import PublicationCard from "../util/publicationcard/PublicationCard.jsx";
 
 class Publication extends Component {
@@ -26,6 +27,8 @@ class Publication extends Component {
     }
 
     render() {
+        if (this.state.inProcess)
+            return <Message title="Cargando..." body="" />
         if (!this.state.inProcess && !this.state.publication)
             return <Redirect to={Path.NOTFOUND()} />
         return (
