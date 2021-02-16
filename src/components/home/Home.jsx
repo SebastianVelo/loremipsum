@@ -15,7 +15,8 @@ class Home extends Component {
     this.state = {
       publications: [],
       stories: [],
-      page: 0
+      page: 0,
+      inProcess: true
     };
   }
 
@@ -49,10 +50,13 @@ class Home extends Component {
     Grid.setHomeGrid();
     await this.getPublications(this.state.page);
     await this.getStories();
+    this.setState({inProcess: false});
     await this.pagination();
   }
 
   render() {
+    if (this.state.inProcess)
+        return <Message title="Cargando..." body="" />
     return (
       <div className="--home">
         <StoryBalls stories={this.state.stories} />
