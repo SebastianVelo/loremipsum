@@ -48,11 +48,11 @@ class Home extends Component {
 
   async componentDidMount() {
     Grid.setNotFoundGrid();
-    Grid.setHomeGrid();
     await this.getPublications(this.state.page);
     await this.getStories();
     this.setState({ inProcess: false });
     await this.pagination();
+    Grid.setHomeGrid();
   }
 
   render() {
