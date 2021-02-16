@@ -31,12 +31,15 @@ class UserProfile extends Component {
         await this.getUser();
         await this.getPublications();
         Grid.setUserProfileGrid();
+        Grid.setNotFoundGrid();
     }
 
     render() {
         if (this.state.inProcess)
-            return <Message title="Cargando..." body="" />
-        if(!this.state.inProcess && !this.state.user)
+            return (<div className="--not-found">
+                <Message title="Cargando..." body="" />
+            </div>)
+        if (!this.state.inProcess && !this.state.user)
             return <Redirect to={Path.NOTFOUND()} />
         return (
             !this.state.inProcess &&

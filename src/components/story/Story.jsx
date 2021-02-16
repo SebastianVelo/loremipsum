@@ -28,11 +28,14 @@ class Story extends Component {
     async componentDidMount() {
         await this.getStoryById();
         Grid.setStoryGrid();
+        Grid.setNotFoundGrid();
     }
 
     render() {
         if (this.state.inProcess)
-            return <Message title="Cargando..." body="" />
+            return (<div className="--not-found">
+                <Message title="Cargando..." body="" />
+            </div>)
         if (!this.state.inProcess && !this.state.story)
             return <Redirect to={Path.NOTFOUND()} />
         return (
@@ -43,7 +46,7 @@ class Story extends Component {
                     <Link to={{ pathname: Path.PROFILE(this.state.story.user.userName) }} className="--story-user">{this.state.story.user.userName}</Link>
                 </div>
                 <div className="--story-picture-wrapper">
-                    <Carousel id={this.state.story.id} pictures={this.state.story.pictures} interval={2000} redirect={Path.HOME()[1]}  options={["fullH"]} />
+                    <Carousel id={this.state.story.id} pictures={this.state.story.pictures} interval={2000} redirect={Path.HOME()[1]} options={["fullH"]} />
                 </div>
             </div>
         );

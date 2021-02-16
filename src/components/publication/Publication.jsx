@@ -24,11 +24,14 @@ class Publication extends Component {
     async componentDidMount() {
         if (this.props.match.params.id)
             await this.getPublication();
+        Grid.setNotFoundGrid();
     }
 
     render() {
         if (this.state.inProcess)
-            return <Message title="Cargando..." body="" />
+            return (<div className="--not-found">
+                <Message title="Cargando..." body="" />
+            </div>)
         if (!this.state.inProcess && !this.state.publication)
             return <Redirect to={Path.NOTFOUND()} />
         return (
