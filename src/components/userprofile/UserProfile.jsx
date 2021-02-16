@@ -28,16 +28,16 @@ class UserProfile extends Component {
     }
 
     async componentDidMount() {
+        Grid.setUserProfileGrid();
         await this.getUser();
         await this.getPublications();
         Grid.setUserProfileGrid();
-        Grid.setNotFoundGrid();
     }
 
     render() {
         if (this.state.inProcess)
-            return (<div className="--not-found">
-                <Message title="Cargando..." body="" />
+            return (<div className="--user-profile">
+                <Message title="Loading..." body="" />
             </div>)
         if (!this.state.inProcess && !this.state.user)
             return <Redirect to={Path.NOTFOUND()} />

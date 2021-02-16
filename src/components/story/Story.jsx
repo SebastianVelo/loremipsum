@@ -8,7 +8,6 @@ import Carousel from "../util/carousel/Carousel.jsx";
 import API from "../../enums/API";
 import Path from "../../enums/Path";
 import { Link } from "react-router-dom";
-import Message from "../util/message/Message";
 
 class Story extends Component {
     constructor(props) {
@@ -28,14 +27,9 @@ class Story extends Component {
     async componentDidMount() {
         await this.getStoryById();
         Grid.setStoryGrid();
-        Grid.setNotFoundGrid();
     }
 
     render() {
-        if (this.state.inProcess)
-            return (<div className="--not-found">
-                <Message title="Cargando..." body="" />
-            </div>)
         if (!this.state.inProcess && !this.state.story)
             return <Redirect to={Path.NOTFOUND()} />
         return (

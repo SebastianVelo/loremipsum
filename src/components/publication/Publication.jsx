@@ -23,15 +23,15 @@ class Publication extends Component {
     }
 
     async componentDidMount() {
+        Grid.setPublicationWrapperGrid();
         if (this.props.match.params.id)
             await this.getPublication();
-        Grid.setNotFoundGrid();
     }
 
     render() {
         if (this.state.inProcess)
-            return (<div className="--not-found">
-                <Message title="Cargando..." body="" />
+            return (<div className="--publication-wrapper">
+                <Message title="Loading..." body="" />
             </div>)
         if (!this.state.inProcess && !this.state.publication)
             return <Redirect to={Path.NOTFOUND()} />

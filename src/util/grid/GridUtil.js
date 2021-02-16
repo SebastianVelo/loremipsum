@@ -95,15 +95,16 @@ function setStoryGrid() {
     $('.--story-picture-wrapper').addClass(storyPictures.getClass());
 }
 
-function setPublicationGrid() {
+function setPublicationWrapperGrid() {
     const publicationWrapper = new GridSystem();
     publicationWrapper.add(GridSize.SMALL, 12);
     publicationWrapper.add(GridSize.MEDIUM, 8, 2);
     publicationWrapper.add(GridSize.LARGE, 6, 3);
     publicationWrapper.add(GridSize.EXTRALARGE, 4, 4);
-
     $('.--publication-wrapper').addClass(publicationWrapper.getClass());
+}
 
+function setPublicationGrid() {
     const headerAvatar = new GridSystem();
     headerAvatar.add(GridSize.SMALL, 2);
     headerAvatar.add(GridSize.MEDIUM, 2);
@@ -116,7 +117,6 @@ function setPublicationGrid() {
     headerUser.add(GridSize.EXTRALARGE, 10);
     const headerOptions = new GridSystem();
     headerOptions.add(GridSize.ALL, 1);
-
     $('.--publication-avatar-wrapper').addClass(headerAvatar.getClass());
     $('.--publication-user-wrapper').addClass(headerUser.getClass());
     $('.--publication-options-wrapper').addClass(headerOptions.getClass());
@@ -182,6 +182,7 @@ const Grid = {
     setStoryGrid: () => setStoryGrid(),
     setCarouselGrid: () => setCarouselGrid(),
     setPublicationGrid: () => setPublicationGrid(),
+    setPublicationWrapperGrid: () => setPublicationWrapperGrid(),
     setUserProfileGrid: () => setUserProfileGrid(),
     setNotFoundGrid: () => setNotFoundGrid()
 }

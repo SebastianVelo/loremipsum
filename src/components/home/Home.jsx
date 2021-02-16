@@ -47,18 +47,17 @@ class Home extends Component {
   }
 
   async componentDidMount() {
-    Grid.setNotFoundGrid();
+    Grid.setHomeGrid();
     await this.getPublications(this.state.page);
     await this.getStories();
     this.setState({ inProcess: false });
     await this.pagination();
-    Grid.setHomeGrid();
   }
 
   render() {
     if (this.state.inProcess)
-      return (<div className="--not-found">
-        <Message title="Cargando..." body="" />
+      return (<div className="--home">
+        <Message title="Loading..." body="" />
       </div>)
     return (
       <div className="--home">
