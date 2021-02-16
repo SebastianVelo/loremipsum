@@ -3,6 +3,7 @@ import { Redirect, withRouter } from "react-router";
 
 import API from "../../enums/API.js";
 import Path from "../../enums/Path.js";
+import Grid from "../../util/grid/GridUtil.js";
 import Message from "../util/message/Message.jsx";
 import PublicationCard from "../util/publicationcard/PublicationCard.jsx";
 
