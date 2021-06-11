@@ -1,6 +1,6 @@
 {
-  "homepage": "https://sebastianvelo.github.io/loremipsum/",
-  "name": "loremipsum",
+  "homepage": "https://sebastianvelo.github.io/social-network/",
+  "name": "socialnetwork",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
