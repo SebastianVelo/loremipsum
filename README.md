@@ -1,5 +1,10 @@
 # Social Network
 
+_Una red social falsa estilo instagram. Todos los datos estan simulados._
+
+## :link:
+https://sebastianvelo.github.io/social-network/#/
+
 ## Comenzando ⚙️
 
 _Primero nos descargamos el proyecto de manera local._
